@@ -256,7 +256,7 @@
             >
               <div class="loading-overlay gradient"></div>
               <ul
-                class="grid product-grid  grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop"
+                id="search-results-grid-infinite-scroll" class="grid product-grid  grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop"
                 role="list"
               >
                 {%- for item in search.results -%}
@@ -319,9 +319,19 @@
                   </li>
                 {%- endfor -%}
               </ul>
+
+            <div id="AjaxinatePagination" style="text-align:center;">
+              {% if paginate.next %}
+              <a href="{{ paginate.next.url }}"><img src="{{ 'spinner.gif' | asset_url }}" width="200px" height="200px" loading="eager"></a>
+              {% endif %}  
+            </div>
+
+            {% comment %}  Comment out old pagination   
               {%- if paginate.pages > 1 -%}
                 {% render 'pagination', paginate: paginate %}
               {%- endif -%}
+            {% endcomment %}
+              
             </div>
           {%- endif -%}
         </div>
@@ -332,6 +342,16 @@
 {% if section.settings.image_shape == 'arch' %}
   {% render 'mask-arch' %}
 {%- endif -%}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var endlessScroll = new Ajaxinate({
+      container: '#search-results-grid-infinite-scroll',
+      pagination: '#AjaxinatePagination',
+      loadingText: '<img src="https://cdn.shopify.com/s/files/1/0364/8349/8116/t/22/assets/spinner.gif?v=1689695972" />'
+    });
+  });
+</script>
 
 {% schema %}
 {

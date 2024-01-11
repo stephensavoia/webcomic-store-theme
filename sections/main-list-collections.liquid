@@ -25,6 +25,7 @@
   -%}
   {%- paginate collections by paginate_by -%}
     <ul
+      id="collections-grid-infinite-scroll"
       class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
       role="list"
     >
@@ -44,9 +45,30 @@
         </li>
       {%- endfor -%}
     </ul>
+
+    <div id="AjaxinatePagination" style="text-align:center;">
+      {% if paginate.next %}
+      <a href="{{ paginate.next.url }}"><img src="{{ 'spinner.gif' | asset_url }}" width="200px" height="200px" loading="eager"></a>
+      {% endif %}  
+    </div>
+
+    {% comment %}  Comment out old pagination 
     {% render 'pagination', paginate: paginate %}
+    {% endcomment %}
+  
   {%- endpaginate -%}
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var endlessScroll = new Ajaxinate({
+      container: '#collections-grid-infinite-scroll',
+      pagination: '#AjaxinatePagination',
+      loadingText: '<img src="https://cdn.shopify.com/s/files/1/0364/8349/8116/t/22/assets/spinner.gif?v=1689695972" />'
+    });
+  });
+</script>
+
 {% schema %}
 {
   "name": "t:sections.main-list-collections.name",
