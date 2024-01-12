@@ -59,3 +59,24 @@
     padding-bottom: 82.5rem;
   }
 }
+
+/* For webcomic theme */
+
+.blog-articles {
+  display: block;
+
+}
+
+.blog-articles__article {
+  display: block;
+  text-align: center;
+}
+
+.blog-articles .link {
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+
+.blog-articles .link:hover {
+  text-decoration: underline;
+}

@@ -31,7 +31,7 @@
             style="--animation-order: {{ forloop.index }};"
           {% endif %}
         >
-          <a href="{{ article.url }}"><h3>{{ article.title }}</h3></a>
+          <a href="{{ article.url }}" class="link">{{ article.title }}</a>
 
         </div>
       {%- endfor -%}
@@ -64,7 +64,7 @@
 
 {% schema %}
 {
-  "name": "Comic archive list",
+  "name": "Comic archive",
   "tag": "section",
   "class": "section",
   "settings": [
