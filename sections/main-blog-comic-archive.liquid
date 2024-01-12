@@ -22,7 +22,7 @@
       {{ blog.title | escape }}
     </h1>
 
-    <div id="#blog-container-infinite-scroll" class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+    <div id="#blog-container-infinite-scroll" class="blog-articles">
       {%- for article in blog.articles -%}
         <div
           class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -31,8 +31,8 @@
             style="--animation-order: {{ forloop.index }};"
           {% endif %}
         >
-          {{ article.url }}
-          
+          <a href="{{ article.url }}"><h3>{{ article.title }}</h3></a>
+
         </div>
       {%- endfor -%}
     </div>
@@ -64,35 +64,10 @@
 
 {% schema %}
 {
-  "name": "t:sections.main-blog.name",
+  "name": "Comic archive list",
   "tag": "section",
   "class": "section",
   "settings": [
-    {
-      "type": "header",
-      "content": "t:sections.main-blog.settings.header.content"
-    },
-    {
-      "type": "select",
-      "id": "layout",
-      "options": [
-        {
-          "value": "grid",
-          "label": "t:sections.main-blog.settings.layout.options__1.label"
-        },
-        {
-          "value": "collage",
-          "label": "t:sections.main-blog.settings.layout.options__2.label"
-        }
-      ],
-      "default": "collage",
-      "label": "t:sections.main-blog.settings.layout.label",
-      "info": "t:sections.main-blog.settings.layout.info"
-    },
-    {
-      "type": "paragraph",
-      "content": "t:sections.main-blog.settings.paragraph.content"
-    },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
