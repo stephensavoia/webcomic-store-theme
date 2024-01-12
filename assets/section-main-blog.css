@@ -75,8 +75,13 @@
 .blog-articles .link {
   font-size: 1.8rem;
   text-decoration: none;
+  margin-bottom: 0.45rem;
 }
 
 .blog-articles .link:hover {
   text-decoration: underline;
+}
+
+.archive-title {
+  text-align: center;
 }

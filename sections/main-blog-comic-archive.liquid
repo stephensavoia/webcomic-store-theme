@@ -18,8 +18,8 @@
 
 {%- paginate blog.articles by 6 -%}
   <div class="main-blog page-width section-{{ section.id }}-padding">
-    <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {{ blog.title | escape }}
+    <h1 class="archive-title title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      {{ section.settings.comic_archive_title }}
     </h1>
 
     <div id="#blog-container-infinite-scroll" class="blog-articles">
@@ -68,6 +68,12 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "text",
+      "id": "comic_archive_title",
+      "label": "Heading",
+      "default": "Comic Series Archive"
+    },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
