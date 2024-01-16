@@ -93,7 +93,7 @@
 }
 
 .article-template__social-sharing {
-  margin-top: 3rem;
+  margin-top: 0;
 }
 
 .article-template__social-sharing + header,
@@ -172,4 +172,43 @@
 
 .article-template__back:last-child {
   margin-bottom: 3.2rem;
+}
+
+
+/* For webcomic theme */
+
+.comic-nav-buttons-container {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.comic-nav-button {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.comic-nav-button:first-child {
+  text-align: right;
+}
+
+.comic-nav-button:last-child {
+  text-align: left;
+}
+
+.comic-nav-button .link {
+  margin: 0 0.8rem;
+  color: rgb(18,18,18);
+  text-decoration: none;
+}
+
+.comic-nav-button .link:hover {
+  color: rgb(0,0,0);
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
 }
