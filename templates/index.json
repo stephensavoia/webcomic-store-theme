@@ -71,6 +71,26 @@
     },
     "main_article_comic_JnWhcT": {
       "type": "main-article-comic",
+      "blocks": {
+        "title_Enbbxz": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "blog_show_date": false,
+            "blog_show_author": false
+          }
+        },
+        "comic_image_YxyN8q": {
+          "type": "comic_image",
+          "settings": {
+            "image_height": "adapt"
+          }
+        }
+      },
+      "block_order": [
+        "title_Enbbxz",
+        "comic_image_YxyN8q"
+      ],
       "settings": {
         "blog": "comic-series-1"
       }
