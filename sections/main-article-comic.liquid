@@ -1,4 +1,9 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+
+{%- if template.name != "article" -%}
+{%- assign blog = blogs[section.settings.blog] -%}
+{%- endif -%}
+
 <article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
   {%- for block in section.blocks -%}
     {%- case block.type -%}
@@ -320,6 +325,13 @@
   "name": "Comic blog post",
   "tag": "section",
   "class": "section",
+  "settings": [
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog (for homepage)"
+    }
+  ],
   "blocks": [
     {
       "type": "@app"
