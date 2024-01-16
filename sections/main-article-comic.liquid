@@ -1,8 +1,12 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
 {%- if template.name != "article" -%}
-{%- assign blog = blogs[section.settings.blog] -%}
+{%- assign blog = section.settings.blog -%}
+{%- assign article = blog.articles[0] -%}
 {%- endif -%}
+
+{{ blog }}
+{{ article.image }}
 
 <article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
   {%- for block in section.blocks -%}
