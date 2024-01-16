@@ -16,8 +16,8 @@
             "share_label": "Share"
           }
         },
-        "featured_image": {
-          "type": "featured_image",
+        "comic_image_aeBUjd": {
+          "type": "comic_image",
           "settings": {
             "image_height": "adapt"
           }
@@ -32,7 +32,7 @@
       "block_order": [
         "title",
         "share",
-        "featured_image",
+        "comic_image_aeBUjd",
         "content"
       ],
       "settings": {
