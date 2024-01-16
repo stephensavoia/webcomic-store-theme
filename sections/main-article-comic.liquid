@@ -6,7 +6,7 @@
         <div class="page-width page-width--narrow">
           {% render block %}
         </div>
-      {%- when 'featured_image' -%}
+      {%- when 'comic_image' -%}
         {%- if article.image -%}
           <div
             class="article-template__hero-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
@@ -325,8 +325,8 @@
       "type": "@app"
     },
     {
-      "type": "featured_image",
-      "name": "t:sections.main-article.blocks.featured_image.name",
+      "type": "comic_image",
+      "name": "Comic image",
       "limit": 1,
       "settings": [
         {
